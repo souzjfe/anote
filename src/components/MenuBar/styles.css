@@ -1,0 +1,11 @@
+.divider {
+  background-color: rgba(#fff, 0.25);
+  height: 1.25rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 1px;
+}
+.editor__header {
+  background: #0d0d0d;
+  border-bottom: 3px solid #1e1a1a;
+}
