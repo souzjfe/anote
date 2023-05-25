@@ -34,13 +34,7 @@
   "devDependencies": {
     "@crxjs/vite-plugin": "^1.0.12",
     "@preact/preset-vite": "^2.3.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/typography": "^0.5.9",
     "@types/chrome": "^0.0.236",
-    "autoprefixer": "^10.4.14",
-    "daisyui": "^2.51.6",
-    "postcss": "^8.4.23",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "tailwindcss": "^3.3.2",
