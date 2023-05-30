@@ -1,6 +1,6 @@
-export interface Message<MessageType = unknown>
-  extends MessageContent<MessageType> {
+export interface Message<MessageType = unknown> {
   from: MessageFrom;
+  content: MessageContent<MessageType>;
 }
 export type MessageFrom = 'popup' | 'options' | 'content' | 'background';
 

@@ -14,11 +14,18 @@ export function getStorageData(): Promise<Storage> {
  * @param {keyof Storage} key - The key of the item to get from the storage.
  * @returns {Promise<Storage[keyof Storage]>} The item from the storage.
  */
-export function getStorageItem(
-  key: keyof Storage,
-): Promise<Storage[keyof Storage]> {
-  if (typeof key !== 'string') key = key.toString();
-  return browser.storage.sync.get(key);
+export function getStorageItem(key: keyof Storage): Promise<any> {
+  return new Promise<any>(async (resolve, reject) => {
+    if (typeof key !== 'string') key = key.toString();
+    await browser.storage.sync
+      .get(key)
+      .then((data) => {
+        resolve(data[key]);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
 }
 
 /**

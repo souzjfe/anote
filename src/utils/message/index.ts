@@ -22,11 +22,11 @@ export function sendMessageToRuntime<MessageType>(
  * @returns {function} sendMessage        - The function to send a message to tab.
  */
 export function sendMessageToTab<MessageType>(
-  tabId: number,
-): (content: MessageContent) => Promise<any> {
+  from: MessageFrom,
+): (tabId: number, content: MessageContent) => Promise<any> {
   /**
    * @property {MessageContent} content                - The content to send to the tab.
    */
-  return (content: MessageContent) =>
-    browser.tabs.sendMessage(tabId, { content });
+  return (tabId: number, content: MessageContent) =>
+    browser.tabs.sendMessage(tabId, { from, content });
 }
