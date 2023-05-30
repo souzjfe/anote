@@ -1,5 +1,11 @@
-import { render } from 'preact'
-import { Popup } from './Popup'
-import './index.css'
+import { render } from 'preact';
+import { Popup } from './Popup';
+import GlobalStyles from '../styles/GlobalStyles';
 
-render(<Popup />, document.getElementById('app') as HTMLElement)
+render(
+  <>
+    <GlobalStyles />
+    <Popup />
+  </>,
+  document.getElementById('app') as HTMLElement,
+);

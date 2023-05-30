@@ -1,8 +1,4 @@
-import { browser } from 'webextension-polyfill-ts';
-import { sendMessageToRuntime } from '../utils/message';
 import { Message } from '../utils/message/types';
-
-const sendMessageFromContent = sendMessageToRuntime('content');
 
 chrome.runtime.onMessage.addListener(
   (message: Message, _sender, senderResponse) => {
