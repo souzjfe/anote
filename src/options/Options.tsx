@@ -1,8 +1,7 @@
-import { useState } from 'preact/hooks'
-import './Options.css'
+import { useState } from 'preact/hooks';
 
 export const Options = () => {
-  const [crx, setCrx] = useState('create-chrome-ext')
+  const [crx, setCrx] = useState('create-chrome-ext');
 
   return (
     <main>
@@ -14,7 +13,7 @@ export const Options = () => {
         Power by {crx}
       </a>
     </main>
-  )
-}
+  );
+};
 
-export default Options
+export default Options;

@@ -1,5 +1,4 @@
-import { render } from 'preact'
-import { Options } from './Options'
-import './index.css'
+import { render } from 'preact';
+import { Options } from './Options';
 
-render(<Options />, document.getElementById('app') as HTMLElement)
+render(<Options />, document.getElementById('app') as HTMLElement);

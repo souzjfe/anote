@@ -1,54 +1,54 @@
-import styled from 'styled-components';
 import { EditorContent } from '@tiptap/react';
+import tw, { styled } from 'twin.macro';
 
 export const Editor = styled.div`
   display: flex;
   flex-direction: column;
-
+`;
+export const Content = styled(EditorContent)`
   div[contentEditable='true'] {
     padding: 0 1em;
     outline: none;
     min-height: 12.5rem;
+    overflow-y: auto;
   }
-`;
-export const Content = styled(EditorContent)`
-  overflow-y: auto;
-  > * + * {
-    margin-top: 0.75em;
-  }
+  ${tw`py-2`}
 
+  p,
+  pre {
+    ${tw`text-sm`}
+  }
   ul,
   ol {
     padding: 0 1rem;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.1;
+  h1 {
+    ${tw`text-5xl`};
   }
 
-  code {
-    background-color: rgba(#616161, 0.1);
-    color: #616161;
+  h2 {
+    ${tw`text-4xl`};
+  }
+
+  h3 {
+    ${tw`text-3xl`};
+  }
+
+  h4 {
+    ${tw`text-2xl`};
+  }
+
+  h5 {
+    ${tw`text-xl`};
+  }
+
+  h6 {
+    ${tw`text-lg`};
   }
 
   pre {
-    background: #0d0d0d;
-    border-radius: 0.5rem;
-    color: #fff;
-    font-family: 'JetBrainsMono', monospace;
-    padding: 0.75rem 1rem;
-
-    code {
-      background: none;
-      color: inherit;
-      font-size: 0.8rem;
-      padding: 0;
-    }
+    ${tw`mockup-code px-4`}
   }
 
   mark {
@@ -70,27 +70,34 @@ export const Content = styled(EditorContent)`
   }
 
   hr {
-    border: none;
-    border-top: 1px solid white;
-    margin: 1rem 0;
+    ${tw`border-0 divider`}
+  }
+
+  ul {
+    ${tw`list-disc`}
+  }
+  ul {
+    ${tw`p-0`}
+    > li {
+      ${tw`flex items-center`}
+    }
+  }
+  ol {
+    ${tw`list-decimal`}
   }
 
   ul[data-type='taskList'] {
-    list-style: none;
-    padding: 0;
-
     li {
-      align-items: center;
-      display: flex;
-
       > label {
-        flex: 0 0 auto;
-        margin-right: 0.5rem;
-        user-select: none;
+        ${tw`flex items-center mr-2`}
+        > input[type='checkbox'] {
+          ${tw`checkbox checkbox-xs checkbox-primary`}
+        }
       }
-
-      > div {
-        flex: 1 1 auto;
+      &[data-checked='true'] {
+        > div {
+          ${tw`line-through opacity-80`}
+        }
       }
     }
   }
